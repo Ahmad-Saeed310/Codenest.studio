@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./codenesticoon.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Block Hover Effect */
+        .block {
+            transition: opacity 0.3s ease-in, background 0.3s ease-in;
+            opacity: 0;
+            /* Initially hidden */
+        }
+
+        .block.active {
+            opacity: 1 !important;
+            background-color: #ccccccb3;
+            /* Yellow overlay */
+        }
+    </style>
+    <title>Codenest</title>
+</head>
+<body class="h-screen w-full bg-[#ebebeb]">
+    <div id="cursor"
+        class=" hidden md:block z-10  pointer-events-none fixed  top-0 left-0 w-[3vw] h-[3vw] border-[.3vw] border-stone-400 rounded-[3vw]">
+    </div>
+    <div id="main" data-scroll-container class="bg-[#ebebeb] ">
+        <div id="nav"
+            class="h-[12vh] md:my-[0vw] md:mt-[0vw] nav  fixed w-full flex justify-between items-center px-6  mt-[-45vw] md:px-[3vw]  z-[9999] ">
+            <div id="logo">
+                <img src="./codenest.png" alt="codenest logo" class="w-12 h-8 md:w-[4.5vw] md:h-[3vw]">
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-black text-2xl">
+                &#9776;
+            </button>
+
+            <!-- Navigation Items -->
+            <div id="elems"
+            class="hidden font md:flex justify-between items-center gap-4 md:gap-[.9vw] font-poppins font-normal text-lg md:text-[1.3vw]">
+            <a href="index.html" class="navelem cursor-pointer">Index</a>
+            <div class="relative group">
+                <div class="navelem cursor-pointer">Projects</div>
+                <div class="hidden group-hover:block absolute bg-black text-white mt-2 py-2 rounded-md min-w-[150px]">
+                    <a href="./project.html" class="block px-4 py-2 hover:bg-gray-100">All Projects</a>
+                    <a href="./projectportfolio.html" class="block px-4 py-2 hover:bg-gray-100">Web Development</a>
+                </div>
+            </div>
+
+            <div class="navelem cursor-pointer">Services</div>
+            <a href="./contact.html" class="navelem cursor-pointer">Contact</a>
+        </div>
+
+            <!-- Connect Button -->
+            <div id="connect" class="hidden md:block">
+                <button class="CartBtn">
+                    <p class="text">Let's Talk</p>
+                    <span class="IconContainer">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="fixed top-0  left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center   z-[9999] hidden ">
+            <button id="close-menu" class=" absolute top-6 right-6 text-3xl ">&times;</button>
+            <div id="text" class=" flex flex-col items-center justify-center leading-none px-[10vw] ">
+                <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-140vw] absolute left-[2vw]">
+                    Index</div>
+                <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-110vw] absolute left-[2vw]">
+                    Projects</div>
+                <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-80vw] absolute left-[2vw]">
+                    Services</div>
+                <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-50vw] absolute left-[2vw]">
+                    Contact</div>
+            </div>
+            <div id="line" class="border border-solid border-white w-[92vw] absolute top-[70vh] mx-[4vw]"></div>
+            <div id="line" class=" w-full absolute top-[72vh] left-[4vw] font-poppins font-semibold text-[6vw]">
+                <h1>Creative Design Agency</h1>
+            </div>
+            <div id="button2" class="   absolute top-[80vh] left-[4vw] text-stone-100 font-poppins   font-regular">2024
+                Codenest All rights reserved
+            </div>
+            <div id="logo">
+                <img src="./codenesticoon.png" alt="codenest logo"
+                    class="w-9 h-8 md:w-[4.5vw] md:h-[3vw] absolute top-[80vh] right-[2.5vw]">
+            </div>
+        </div>
+        <div id="page1" class=" md:h-[100vh] sm:px-6 md:pt-[12vw] lg:px-8 ">
+            <div id="top"></div>
+            <div id="codenest" class="text-center md:px-[25vw]   ">
+                <h1
+                    class="shuffle-load img font-poppins font-medium text-[18vw] md:text-[10vw] md:mt-[0vw] mt-[50vw]  tracking-tighter">
+                    Codenest
+                </h1>
+                <h3
+                    class="font-poppins   font-normal codenest-text text-stone-700 text-[4vw] sm:text-[2.5vw] md:text-[1.7vw] mt-[-1.9vw] tracking-tight">
+                    Designing websites that<br>Captivate, Connect, and Convert
+                </h3>
+            </div>
+            <div id="lower" class="md:flex md:justify-between md:mt-[5vw]">
+                <div id="button"
+                    class=" button flex flex-col md:flex-row items-center  text-[4vw] sm:text-[2vw] md:text-[1.5vw]">
+                    <a href="#page2" class="md:mt-[7vw] mt-[20vw]   text-stone-900 font-medium ">
+                        <i class="ri-arrow-down-line"></i>
+                    </a>
+                    <a href="#page2"
+                        class="mt-[7vw] md:mt-[7vw] text-stone-900 text-[3vw] md:ml-[3vw] md:text-[1.3vw] font-poppins font-regular">
+                        Scroll to Explore
+                    </a>
+                </div>
+                <div id="images"
+                    class=" images flex-row md:flex md:flex-wrap justify-center gap-[6vw] md:gap-[1vw] md:ml-[-3vw] px-[3vw] mt-[20vw] md:mt-[5vw]">
+                    <div id="image1" class="images1">
+                        <img src="./111.jpg" alt="image1"
+                            class="w-[100vw] h-[80vh]  sm:w-[12vw] md:w-[8vw] md:h-[15vh] rounded-lg object-cover object-center ">
+                        <div id="num" class=" hidden text-center md:block text-[2.5vw] sm:text-[1.5vw] md:text-[.9vw]">
+                            01
+                        </div>
+                        <div id="cell" class="flex justify-between">
+                            <div id="num"
+                                class=" font-poppins font-regular ml-[0vw] md:hidden text-[1.8em] sm:text-[1.5vw]  ">
+                                The Infin</div>
+                            <div id="num"
+                                class=" font-poppins font-regular mt-[3vw] text-right md:hidden text-[1.1em] sm:text-[1.2vw] mt-[1.5vw] ">
+                                Photography</div>
+                        </div>
+                    </div>
+                    <div id="image2" class="images2">
+                        <img src="./2.jpeg" alt="image1"
+                            class="w-[100vw] h-[80vh] mt-[7vw] md:mt-[0vw]  sm:w-[12vw] md:w-[8vw] md:h-[15vh] rounded-lg object-cover object-center">
+                        <div id="num" class=" hidden text-center md:block text-[2.5vw] sm:text-[1.5vw] md:text-[.9vw]">
+                            02
+                        </div>
+                        <div id="cell" class="flex justify-between">
+                            <div id="num"
+                                class=" font-poppins font-regular ml-[0vw] md:hidden text-[1.8em] sm:text-[1.5vw]  ">
+                                Cherish</div>
+                            <div id="num"
+                                class=" font-poppins font-regular text-right md:hidden text-[1.1em] sm:text-[1.5vw] mt-[1.5vw] ">
+                                Branding</div>
+                        </div>
+                    </div>
+                    <div id="image3" class="images3">
+                        <img src="./3.jpeg" alt="image1"
+                            class="w-[100vw] h-[80vh]  mt-[7vw] md:mt-[0vw] sm:w-[12vw] md:w-[8vw] md:h-[15vh] rounded-lg object-cover object-center">
+                        <div id="num" class=" hidden text-center md:block text-[2.5vw] sm:text-[1.5vw] md:text-[.9vw]">
+                            03
+                        </div>
+                        <div id="cell" class="flex justify-between">
+                            <div id="num"
+                                class=" font-poppins font-regular ml-[0vw] md:hidden text-[1.8em] sm:text-[1.5vw]  ">
+                                Play</div>
+                            <div id="num"
+                                class=" font-poppins font-regular text-right md:hidden text-[1.1em] sm:text-[1.5vw] mt-[1.5vw] ">
+                                App</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="button2"
+                    class="  button hidden  md:block mt-[3vw] ml-[36vw] md:ml-[0vw] md:mt-[9vw] text-stone-900 font-poppins font-regular text-[3vw]  md:text-[1.3vw] ">
+                    Featured Projects
+                </div>
+            </div>
+        </div>
+        <div id="images" class="flex items-center justify-center gap-[5vw] h-[70vh] pt-[5vw] ">
+            <div class="w-[20vw] h-full hover:w-[50vw] group/second transition-all duration-500 ease-in-out relative rounded-lg">
+                <img src="https://images.unsplash.com/photo-1695634621375-0b66a9d5d1bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z3JhcGhpYyUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D"
+                    alt="Image 2" class="w-full h-full object-cover rounded-lg">
+                <div
+                    class="absolute font text-black bottom-4 left-4  text-xl font-semibold opacity-0 group-hover/second:opacity-100 transition-opacity duration-500">
+                    Graphic
+                </div>
+            </div>
+            <div class="w-[20vw] h-full hover:w-[50vw] group/second transition-all duration-500 ease-in-out relative">
+                <img src="https://images.unsplash.com/photo-1634278479526-99804e34ec2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGdyYXBoaWMlMjBwcm9kdWN0JTIwbW9iaWxlfGVufDB8fDB8fHww"
+                    alt="Image 2" class="w-full h-full object-cover rounded-lg">
+                <div
+                    class="absolute font text-black bottom-4 left-4  text-xl font-semibold opacity-0 group-hover/second:opacity-100 transition-opacity duration-500">
+                    App Dev
+                </div>
+            </div>
+            <div class="w-[20vw] h-full hover:w-[50vw] group/third transition-all duration-500 ease-in-out relative">
+                <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGdyYXBoaWMlMjBwcm9kdWN0JTIwYmlrZXxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Image 3" class="w-full h-full object-cover rounded-lg">
+                <div
+                    class="absolute font text-black bottom-4 left-4  text-xl font-semibold opacity-0 group-hover/third:opacity-100 transition-opacity duration-500">
+                    Product Design
+                </div>
+            </div>
+            </div>
+        <div id="page2" class=" h-[25vh] md:h-[50vh] mt-[3vw]  flex  text-center leading-none justify-center md:px-4 ">
+            <div id="content" class="text-center">
+                <div id="firstline"
+                    class="flex flex-wrap justify-center font-poppins font-semibold   text-[7vw] md:text-[5.3vw] tracking-tighter">
+                    <h2>We help businesses</h2>
+                    <div id="box1"
+                        class="  box box11 h-[4vw] w-[4vw] sm:h-[4vw] sm:w-[4vw] bg-stone-700 rounded-lg bg-cover my-[1vw] mx-[1vw]"
+                        style="background-image: url(https://images.unsplash.com/photo-1559703248-dcaaec9fab78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8);">
+                    </div>
+                    <h2 class="hidden md:block">to innovate</h2>
+                </div>
+                <h2 class=" md:hidden font-poppins font-semibold   text-[7vw]">to innovate and</h2>
+                <div id="secondline"
+                    class="flex flex-wrap justify-center font-poppins font-semibold text-[6vw] md:text-[5.3vw] tracking-tighter">
+                    <h2 class="hidden md:block">and</h2>
+                    <div id="box2"
+                        class="box box22 h-[4vw] w-[4vw] sm:h-[4vw] sm:w-[4vw] bg-stone-700 rounded-lg bg-cover my-[1vw] mx-[1vw]"
+                        style="background-image: url(https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8);">
+                    </div>
+                    <h2 class="hidden md:block">remain highly relevant to</h2>
+                    <h2 class=" md:hidden font-poppins font-semibold   text-[7vw]">remain highly relevant to</h2>
+                </div>
+                <div id="thirdline"
+                    class="flex flex-wrap justify-center font-poppins font-semibold   text-[7vw]  sm:text-[5.3vw] tracking-tighter">
+                    <h2>their customers by developing</h2>
+                    <div id="box3"
+                        class=" box33 box hidden md:block h-[4vw] w-[4vw] sm:h-[4vw] sm:w-[4vw] bg-stone-700 rounded-lg bg-cover my-[1vw] mx-[1vw]"
+                        style="background-image: url(https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBvcCUyMGFydHxlbnwwfHwwfHx8MA%3D%3D);">
+                    </div>
+                </div>
+                <div id="fourthline" class="flex flex-wrap justify-center ">
+                    <div id="box3"
+                        class="box md:hidden h-[4vw] w-[4vw] sm:h-[4vw] sm:w-[4vw] bg-stone-700 rounded-lg bg-cover my-[1vw] mx-[1vw]"
+                        style="background-image: url(https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBvcCUyMGFydHxlbnwwfHwwfHx8MA%3D%3D);">
+                    </div>
+                    <h2 class="font-poppins font-semibold text-[7vw] sm:text-[5.3vw] tracking-tighter">edge digital
+                        products
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="videodesktop" data-scroll class=" hidden md:block flex items-center justify-center mt-[5vw] w-full h-screen">
+            <!-- Video Container 
+             <div id="videoContainer" class="relative w-full h-full overflow-hidden rounded-lg">
+
+                <!-- Background Video 
+                <video id="video" class="videoss absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+                    <source src="./videos.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Blocks Grid Overlay 
+                <div id="imageblock"
+                    class="absolute top-0 left-0 w-full h-full grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 grid-rows-6 sm:grid-rows-8 md:grid-rows-10">
+                    <!-- JavaScript will generate blocks here 
+                </div>
+            </div>
+        </div> -->
+        <div id="page3"
+            class="h-[20vh] flex  justify-center items-center ml-[2vw] mt-[8vw] md:mt-[5vw]   md:ml-[30vw] ">
+            <div id="thecontent">
+                <div id="title"
+                    class="shuffle-text font-poppins font-regular text-[1.3em] md:text-[1.7vw] tracking-tighter">
+                    <h2>The Challenge</h2>
+                </div>
+                <div id="para"
+                    class="font-poppins font-regular text-[3vw] sm:text-[1.1vw] tracking-tighter max-w-[80%] sm:max-w-[50%] ">
+                    <h3>Turning ideas into stunning digital experiences! Take on the challenge of exceptional web design
+                        with us.</h3>
+                </div>
+                <div id="about" class="flex items-center mt-[4vw] md:mt-[1vw]">
+                    <div id="text" class="font-poppins font-regular text-[1.3em]">About</div>
+                    <div id="circle"
+                        class=" md:h-[2vw] md:w-[2vw] w-[4vw] h-[4vw] ml-[2vw]  bg-stone-900 rounded-full  ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="wordimage" class=" page2 h-[100vh] w-full flex flex-col leading-none justify-center mt-[.9vw] md:mt-[5vw] items-center text-center">
+            
+            <div id="overlay1" class="absolute bg-red-400 "></div>
+            <div class="elem  elem1 relative px-[0vw] relative " data-img="./pic11.jpg">
+                <h2 class="cursor-pointer  text-[6vw] shuffle-text text-white uppercase font-poppins font-medium ">VALOUR
+                </h2>
+
+            </div>
+            <div id="overlay2"></div>
+            <div class="elem elem1  relative  px-[0vw]  " data-img="./pic22.jpg">
+                <h2 class="cursor-pointer text-[6vw] shuffle-text text-white uppercase font-poppins font-medium">FUN
+                </h2>
+
+            </div>
+            <div class="elem elem1 relative px-[0vw]  " data-img="./pic33.jpg">
+                <h2 class="cursor-pointer text-[6vw] shuffle-text text-white uppercase font-poppins font-medium">
+                    PERFECTION
+                </h2>
+
+            </div>
+            <div class="elem elem1 relative px-[0vw] " data-img="./pic4.jpg">
+                <h2 class="cursor-pointer text-[6vw] shuffle-text text-white uppercase font-poppins font-medium">CHARM
+                </h2>
+
+            </div>
+            <div class="elem elem1 relative px-[0vw]  " data-img="./pic55.jpg">
+                <h2 class="cursor-pointer text-[6vw] shuffle-text text-white uppercase font-poppins font-medium">
+                    HYPNOTIC
+                </h2>
+
+            </div>
+
+        </div>
+        <div id="project"
+            class="   md:hidden h-[30%]  w-full pt-[8vw]  text-[5vw]  md:h-[35%] md:text-[2vw] md:pt-[3vw] ">
+
+            <div id="thelines"
+                class="  flex justify-center  font-poppins font-semibold mt-[9vw] pb-[6vw] md:mt-[1vw] md:pb-[1.7vw]   ">
+                <h3>Continue Exploring Our Work</h3>
+            </div>
+            <div id="theline"
+                class=" opacity-0  bg-red-800flex theline justify-center bg-black text-white px-5 py-[4vw]  mx-[31vw] rounded-full md:py-[1vw] md:mx-[42vw]">
+                <button>
+                    <h4>All Projects</h4>
+                </button>
+            </div>
+
+        </div>
+        <div id="videomobile" data-scroll class=" md:hidden flex items-center justify-center w-full h-screen">
+            <!-- Video Container -->
+            <div id="videoContainer" class="relative w-full h-full overflow-hidden rounded-lg">
+
+                <!-- Background Video -->
+                <video id="video" class="videoss absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+                    <source src="./videos.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Blocks Grid Overlay -->
+                <div id="imageblock"
+                    class="absolute top-0 left-0 w-full h-full grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 grid-rows-6 sm:grid-rows-8 md:grid-rows-10">
+                    <!-- JavaScript will generate blocks here -->
+                </div>
+            </div>
+        </div>
+        <div id="page6" class="flex flex-col items-center mt-[2vw] text-center px-4 sm:px-9">
+            <div id="logocen" class="flex justify-center ">
+                <div id="logos" class="w-[12vw] sm:w-[4.5vw] h-[8vw] sm:h-[3vw]">
+                    <img src="./codenest.png" alt="">
+                </div>
+            </div>
+            <div id="headingcent" class="mt-[3vw] mb-[1.5vw]">
+                <h2 class="text-[8vw] sm:text-[4.5vw] font-poppins leading-none font-semibold">The Place where your
+            </div><!-- From Uiverse.io by kennyotsu -->
+            <div class="card mt-[-3vw]">
+                <div class="loader">
+                    <div class="words font-poppins font-medium ">
+                        <span class="word">Business</span>
+                        <span class="word">Clients</span>
+                        <span class="word">Business</span>
+                        <span class="word">Trust</span>
+                        <span class="word">Relation</span>
+                    </div>
+                    <p>Grows</p>
+                </div>
+            </div>
+
+            <div id="textcent" class="mb-[3vw]">
+                <h3 class="text-[4vw] sm:text-[1.6vw] font-poppins font-regular">Discover how Codenest is redefining
+                    <br>Business development
+                </h3>
+            </div>
+            <div id="forms" class="w-full max-w-[80%] sm:max-w-[50%]">
+                <form id="contact-form" class="flex flex-col items-center gap-[2vw]">
+                    <input type="hidden" name="access_key" value="12dce690-888f-47cd-878f-27b4c3f4ff49">
+                    <div class="flex flex-col sm:flex-row gap-[2vw] w-full justify-center">
+                        <input type="email" name="email" id="email" placeholder="Enter your email"
+                            class="contact h-[8vw] sm:h-[3vw] w-full sm:w-[21vw] bg-stone-100 border-[.1vw] border-solid border-stone-950 rounded-lg px-4"
+                            required>
+                        <button id="submit-btn" type="submit"
+                            class="h-[8vw] sm:h-[3vw] w-full sm:w-[10vw] text-[3vw] sm:text-[1vw] bg-stone-100 rounded-lg flex items-center justify-center">
+                            Need the service
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="proj" 
+            class="hidden md:block h-[20%] w-full md:h-[35%] md:text-[2vw] md:pt-[3vw]">
+            <div id="thel"
+                class="flex justify-center font-poppins font-semibold mt-[9vw] pb-[6vw] md:mt-[1vw] md:pb-[1.7vw]">
+                <h3>Continue Exploring Our Work</h3>
+            </div>
+            <div id="the"
+                class="Pro theline flex justify-center bg-black text-white px-5 pt-[4vw] mx-[31vw] rounded-full md:py-[.8vw] md:mx-[43vw]"
+                data-scroll 
+                data-scroll-offset="0,50%">
+                <button>
+                    <h4 class="text-[1.7vw]">All Projects</h4>
+                </button>
+            </div>
+        </div>
+<div id="page5" class="h-screen relative ">
+    <div id="textplace" class="">
+    <div id="text" class=" ">
+        <h1 class="cursor-pointer flex codenest  know1 md:mt-[0vw]  pt-[38vh] items-center justify-center md:mx-[32vw]  shuffle-text  font-poppins font-medium text-[4em] md:text-[9vw]  tracking-tighter">
+            Creative
+        </h1>
+        <h1
+            class="  cursor-pointer  codenest shuffle-text  hidden md:block  know font-poppins font-medium text-[4em] md:mx-[18.4vw] md:text-[9vw] mt-[-6vw] tracking-tighter">
+            Design Agency
+        </h1>
+        <h1
+            class=" flex items-center justify-center  md:hidden codenest shuffle-text font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+            Design
+        </h1>
+        <h1
+            class="   flex items-center justify-center md:hidden codenest shuffle-text font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+            Agency
+        </h1>
+    </div></div>
+    <h3 class="font-poppins flex items-center  justify-center text-center font-normal text-stone-500 text-[1em] md:text-[1.7vw] tracking-tight md:mt-8">
+        We are passionate about<br>creating memorable experiences
+    </h3>
+    <div id="lower" class="flex items-center justify-between px-[3vw] mt-[7vw]">
+        <div id="button" class="text-[1.5vw] flex items-center  max-w-screen-lg mt-6">
+            <div id="left" class="flex gap-[.9vw]">
+                
+                <a href="#main" id="button1" class="  md:hidden absolute  bottom-[10vw] left-[6vw] font-semibold"><i
+                    class="ri-arrow-up-wide-line text-[8vw]"></i></a>
+            </div>
+                <div id="button1" class="  hidden md:block text-stone-900 font-light"><i class="ri-arrow-up-wide-line"></i>
+                </div>
+            <a href="#main" class=" font1 hidden md:block text-stone-900 text-[1.3vw] ml-[2vw] font-regular">Back to Top</a>
+        </div>
+        <div id="button1" class="justify-center">
+            <div id="button2" class=" hidden md:block text-stone-800 font-poppins font-semibold ">2024 <span
+                    class="underline">Codenest</span> All rights reserved
+            </div>
+            <div id="button2"
+                class="  md:hidden text-stone-800 font-poppins font-poppins absolute mb-[3vw] bottom-[10vw] right-[6vw] font-semibold text-[4vw]">
+                2024 Codenest All rights reserved
+            </div>
+        </div>
+        <div id="right" class="flex gap-[.9vw]">
+            <!-- <div id="button2" class=" hidden md:block  text-stone-600 font-poppins text-[1.3vw] font-semibold">
+                Follow Us</div>
+            <div id="button2" class=" hidden md:block text-stone-600 font-poppins font-light"><i class="ri-share-fill"></i>
+            </div>
+-->
+            <!-- From Uiverse.io by SharpTH --> 
+<button class="btn-cssbuttons">
+    <span class="text-black text-[1.3vw]">Share</span><span>
+      <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+        <path fill="black" d="M767.99994 585.142857q75.995429 0 129.462857 53.394286t53.394286 129.462857-53.394286 129.462857-129.462857 53.394286-129.462857-53.394286-53.394286-129.462857q0-6.875429 1.170286-19.456l-205.677714-102.838857q-52.589714 49.152-124.562286 49.152-75.995429 0-129.462857-53.394286t-53.394286-129.462857 53.394286-129.462857 129.462857-53.394286q71.972571 0 124.562286 49.152l205.677714-102.838857q-1.170286-12.580571-1.170286-19.456 0-75.995429 53.394286-129.462857t129.462857-53.394286 129.462857 53.394286 53.394286 129.462857-53.394286 129.462857-129.462857 53.394286q-71.972571 0-124.562286-49.152l-205.677714 102.838857q1.170286 12.580571 1.170286 19.456t-1.170286 19.456l205.677714 102.838857q52.589714-49.152 124.562286-49.152z"></path>
+      </svg>
+    </span>
+    <ul>
+    <li>
+      <a href="https://twitter.com/SumethWrrn"><svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+      <path fill="black" d="M962.267429 233.179429q-38.253714 56.027429-92.598857 95.451429 0.585143 7.972571 0.585143 23.990857 0 74.313143-21.723429 148.260571t-65.974857 141.970286-105.398857 120.32-147.456 83.456-184.539429 31.158857q-154.843429 0-283.428571-82.870857 19.968 2.267429 44.544 2.267429 128.585143 0 229.156571-78.848-59.977143-1.170286-107.446857-36.864t-65.170286-91.136q18.870857 2.852571 34.889143 2.852571 24.576 0 48.566857-6.290286-64-13.165714-105.984-63.707429t-41.984-117.394286l0-2.267429q38.838857 21.723429 83.456 23.405714-37.741714-25.161143-59.977143-65.682286t-22.308571-87.990857q0-50.322286 25.161143-93.110857 69.12 85.138286 168.301714 136.265143t212.260571 56.832q-4.534857-21.723429-4.534857-42.276571 0-76.580571 53.979429-130.56t130.56-53.979429q80.018286 0 134.875429 58.294857 62.317714-11.995429 117.174857-44.544-21.138286 65.682286-81.115429 101.741714 53.174857-5.705143 106.276571-28.598857z"></path></svg></a>
+    </li>
+    <li>
+      <a href="https://codepen.io/sharpth"><svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+      <path fill="black" d="M123.52064 667.99143l344.526782 229.708899 0-205.136409-190.802457-127.396658zM88.051421 585.717469l110.283674-73.717469-110.283674-73.717469 0 147.434938zM556.025711 897.627196l344.526782-229.708899-153.724325-102.824168-190.802457 127.396658 0 205.136409zM512 615.994287l155.406371-103.994287-155.406371-103.994287-155.406371 103.994287zM277.171833 458.832738l190.802457-127.396658 0-205.136409-344.526782 229.708899zM825.664905 512l110.283674 73.717469 0-147.434938zM746.828167 458.832738l153.724325-102.824168-344.526782-229.708899 0 205.136409zM1023.926868 356.00857l0 311.98286q0 23.402371-19.453221 36.566205l-467.901157 311.98286q-11.993715 7.459506-24.57249 7.459506t-24.57249-7.459506l-467.901157-311.98286q-19.453221-13.163834-19.453221-36.566205l0-311.98286q0-23.402371 19.453221-36.566205l467.901157-311.98286q11.993715-7.459506 24.57249-7.459506t24.57249 7.459506l467.901157 311.98286q19.453221 13.163834 19.453221 36.566205z"></path></svg></a>
+    </li>
+    <li>
+    <a href="https://github.com/SharpTH"><svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+    <path fill="black" d="M950.930286 512q0 143.433143-83.748571 257.974857t-216.283429 158.573714q-15.433143 2.852571-22.601143-4.022857t-7.168-17.115429l0-120.539429q0-55.442286-29.696-81.115429 32.548571-3.437714 58.587429-10.313143t53.686857-22.308571 46.299429-38.034286 30.281143-59.977143 11.702857-86.016q0-69.12-45.129143-117.686857 21.138286-52.004571-4.534857-116.589714-16.018286-5.12-46.299429 6.290286t-52.589714 25.161143l-21.723429 13.677714q-53.174857-14.848-109.714286-14.848t-109.714286 14.848q-9.142857-6.290286-24.283429-15.433143t-47.689143-22.016-49.152-7.68q-25.161143 64.585143-4.022857 116.589714-45.129143 48.566857-45.129143 117.686857 0 48.566857 11.702857 85.723429t29.988571 59.977143 46.006857 38.253714 53.686857 22.308571 58.587429 10.313143q-22.820571 20.553143-28.013714 58.88-11.995429 5.705143-25.746286 8.557714t-32.548571 2.852571-37.449143-12.288-31.744-35.693714q-10.825143-18.285714-27.721143-29.696t-28.306286-13.677714l-11.410286-1.682286q-11.995429 0-16.603429 2.56t-2.852571 6.582857 5.12 7.972571 7.460571 6.875429l4.022857 2.852571q12.580571 5.705143 24.868571 21.723429t17.993143 29.110857l5.705143 13.165714q7.460571 21.723429 25.161143 35.108571t38.253714 17.115429 39.716571 4.022857 31.744-1.974857l13.165714-2.267429q0 21.723429 0.292571 50.834286t0.292571 30.866286q0 10.313143-7.460571 17.115429t-22.820571 4.022857q-132.534857-44.032-216.283429-158.573714t-83.748571-257.974857q0-119.442286 58.88-220.306286t159.744-159.744 220.306286-58.88 220.306286 58.88 159.744 159.744 58.88 220.306286z"></path></svg></a></li></ul></button>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

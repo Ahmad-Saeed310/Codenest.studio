@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+
+<body class="h-full w-full box-sizing">
+    
+    <div id="main">
+        <div id="nav"
+        class=" text-stone-100  h-[12vh] md:my-[0vw] md:mt-[0vw] nav  fixed w-full flex justify-between items-center px-6  mt-[-45vw] md:px-[3vw]  z-[9999] ">
+        <div id="logo">
+            <img src="./codenesticoon.png" alt="codenest logo" class="w-20  h-8  md:h-[5vw]">
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="md:hidden text-black text-2xl">
+            &#9776;
+        </button>
+
+        <!-- Navigation Items -->
+        <div id="elems"
+            class="hidden font md:flex justify-between items-center gap-4 md:gap-[.9vw] font-poppins font-normal text-lg md:text-[1.3vw]">
+            <a href="index.html" class="navelem cursor-pointer">Index</a>
+            <div class="relative group">
+                <div class="navelem cursor-pointer">Projects</div>
+                <div class="hidden group-hover:block absolute bg-black text-white mt-2 py-2 rounded-md min-w-[150px]">
+                    <a href="./project.html" class="block px-4 py-2 hover:bg-gray-700">All Projects</a>
+                    <a href="./projectportfolio.html" class="block px-4 py-2 hover:bg-gray-700">Web Development</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">Projects</button>
+                <div class="dropdown-content">
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                  <a href="#">Option 3</a>
+                </div>
+              </div>
+              
+
+            <div class="navelem cursor-pointer">Services</div>
+            <a href="./contact.html" class="navelem cursor-pointer">Contact</a>
+        
+        </div>
+
+        <!-- Connect Button -->
+        <a id="connect" class="hidden md:block">
+            <button  class="CartBtn">
+                <p class="text">Let's Talk</p>
+                <span class="IconContainer">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                    </svg>
+                </span>
+            </button>
+        </a>
+    </div>
+    <div id="mobile-menu"
+        class="fixed top-0  left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center   z-[9999] hidden ">
+        <button id="close-menu" class=" absolute top-6 right-6 text-3xl ">&times;</button>
+        <div id="text" class=" flex flex-col items-center justify-center leading-none px-[10vw] ">
+            <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-140vw] absolute left-[2vw]">
+                Index</div>
+            <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-110vw] absolute left-[2vw]">
+                Projects</div>
+            <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-80vw] absolute left-[2vw]">
+                Services</div>
+            <div class="elem left-[4vw] font-poppins font-semibold  text-[15vw] mt-[-50vw] absolute left-[2vw]">
+                Contact</div>
+        </div>
+        <div id="line" class="border border-solid border-white w-[92vw] absolute top-[70vh] mx-[4vw]"></div>
+        <div id="line" class=" w-full absolute top-[72vh] left-[4vw] font-poppins font-semibold text-[6vw]">
+            <h1>Creative Design Agency</h1>
+        </div>
+        <div id="button2" class="   absolute top-[80vh] left-[4vw] text-stone-100 font-poppins   font-regular">2024
+            Codenest All rights reserved
+        </div>
+        <div id="logo">
+            <img src="./codenesticoon.png" alt="codenest logo"
+                class="w-9 h-8 md:w-[4.5vw] md:h-[3vw] absolute top-[80vh] right-[2.5vw]">
+        </div>
+    </div>
+
+        <div id="page1" class="h-screen bg-black">
+            <div id="textplace" class="">
+                <div id="text" class="pt-[10vw] items-center">
+                    <h1
+                    class="cursor-pointer text-white font flex codenest  know1  items-center justify-center  shuffle-text  font-poppins font-medium text-[4em] md:text-[9vw]  tracking-tighter">
+                    Crafting
+                </h1>
+                    <h1
+                        class="flex ml-[22vw] items-center justify-center text-stone-100 cursor-pointer font codenest shuffle-text  hidden md:block  know font-poppins font-medium   md:text-[9vw] mt-[-6vw] tracking-tighter">
+                        Digital Assets
+                    </h1>
+                    <h1
+                    class=" flex items-center justify-center  md:hidden codenest shuffle-text font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+                    Design
+                </h1>
+                <h1
+                class="   flex items-center justify-center md:hidden codenest shuffle-text font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+                Agency
+            </h1>
+                </div>
+            </div>
+            <h3
+            class="font-poppins text-center font-normalfont codenest-text text-stone-200 text-[4vw] sm:text-[2.5vw] md:text-[1.7vw] mt-[-1.9vw] tracking-tight">
+            Designing digital experiences that<br>leave a lasting impression
+            </h3>
+            <div id="lower" class="flex items-center justify-between px-[3vw] mt-[8vw]">
+                
+                <div id="button" class=" button flex  items-center  text-[4vw] sm:text-[2vw] md:text-[1.5vw]">
+                    <a href="#page4" class="text-white ">
+                        <i class="ri-arrow-down-line"></i>
+                    </a>
+                    <a href="#page4"
+                    class=" text-stone-100 font text-[3vw] md:ml-[3vw] md:text-[1.3vw] font-poppins font-regular">
+                    Scroll to Explore
+                </a>
+            </div>
+            <div id="button1" class="justify-center">
+
+                    <div id="button2"
+                        class="  md:hidden text-stone-100 font-poppins font-poppins absolute mb-[3vw] bottom-[10vw] right-[6vw] font-semibold text-[4vw]">
+                        2024 Codenest All rights reserved
+                    </div>
+                </div>
+                <div id="right" class="flex gap-[.9vw]">
+                    <div id="button2"
+                    class="font hidden md:block  text-stone-100 font-poppins text-[1.1vw] font-semibold">
+                    All Case Studies</div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div id="page3" class="h-[160vh] bg-black">
+            
+        <div id="images" class="flex items-center justify-center gap-[2vw] h-[70vh] pt-[5vw] ">
+        <div class="w-[30vw] h-full hover:w-[50vw] group/second transition-all duration-500 ease-in-out relative rounded-lg">
+            <img src="https://images.unsplash.com/photo-1644251966613-170a26996adb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+                alt="Image 2" class="w-full h-full object-cover rounded-lg">
+            <div
+                class="absolute bottom-4 left-4 text-white text-xl font-semibold opacity-0 group-hover/second:opacity-100 transition-opacity duration-500">
+                Project 2
+            </div>
+        </div>
+        <div class="w-[30vw] h-full hover:w-[50vw] group/second transition-all duration-500 ease-in-out relative">
+            <img src="https://images.unsplash.com/photo-1644251966613-170a26996adb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+                alt="Image 2" class="w-full h-full object-cover rounded-lg">
+            <div
+                class="absolute bottom-4 left-4 text-white text-xl font-semibold opacity-0 group-hover/second:opacity-100 transition-opacity duration-500">
+                Project 2
+            </div>
+        </div>
+        <div class="w-[30vw] h-full hover:w-[50vw] group/third transition-all duration-500 ease-in-out relative">
+            <img src="https://images.unsplash.com/photo-1655548201132-824b96322d69?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+                alt="Image 3" class="w-full h-full object-cover rounded-lg">
+            <div
+                class="absolute bottom-4 left-4 text-white text-xl font-semibold opacity-0 group-hover/third:opacity-100 transition-opacity duration-500">
+                Project 3
+            </div>
+        </div>
+        </div>
+        <div id="images2" class="flex items-center justify-center gap-[2vw] h-[70vh] pt-[5vw] ">
+        <div class="w-[30vw] h-full hover:w-[50vw] group/second transition-all duration-500 ease-in-out relative">
+            <img src="https://images.unsplash.com/photo-1644251966613-170a26996adb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+                alt="Image 2" class="w-full h-full object-cover rounded-lg">
+            <div
+                class="absolute bottom-4 left-4 text-white text-xl font-semibold opacity-0 group-hover/second:opacity-100 transition-opacity duration-500">
+                Project 2
+            </div>
+        </div>
+        <div class="w-[30vw] h-full hover:w-[50vw] group/second transition-all duration-500 ease-in-out relative">
+            <img src="https://images.unsplash.com/photo-1644251966613-170a26996adb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+                alt="Image 2" class="w-full h-full object-cover rounded-lg">
+            <div
+                class="absolute bottom-4 left-4 text-white text-xl font-semibold opacity-0 group-hover/second:opacity-100 transition-opacity duration-500">
+                Project 2
+            </div>
+        </div>
+        <div class="w-[30vw] h-full hover:w-[50vw] group/third transition-all duration-500 ease-in-out relative">
+            <img src="https://images.unsplash.com/photo-1655548201132-824b96322d69?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+                alt="Image 3" class="w-full h-full object-cover rounded-lg">
+            <div
+                class="absolute bottom-4 left-4 text-white text-xl font-semibold opacity-0 group-hover/third:opacity-100 transition-opacity duration-500">
+                Project 3
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="page5" class="h-screen relative bg-black  ">
+            <div id="textplace" class="">
+                <div id="text" class="pt-[9vw] ">
+                    <h1
+                        class="cursor-pointer font flex codenest text-stone-100   items-center justify-center   shuffle-text  font-poppins font-regular md:text-[9vw]  tracking-tighter">
+                        Virtual
+                    </h1>
+                    <h1
+                        class="  cursor-pointer font ml-[26vw] text-stone-100 items-center codenest shuffle-text  hidden md:block  know font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+                        PlayGround
+                    </h1>
+                    <h1
+                        class=" flex items-center justify-center  md:hidden codenest shuffle-text font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+                        Design
+                    </h1>
+                    <h1
+                        class="   flex items-center justify-center md:hidden codenest shuffle-text font-poppins font-medium text-[4em] md:text-[9vw] mt-[-6vw] tracking-tighter">
+                        Agency
+                    </h1>
+                </div>
+            </div>
+            <h3
+                class="font-poppins font  flex items-center text-stone-100  justify-center text-center font-normal text-[1em] md:text-[1.7vw] tracking-tight md:mt-8">
+                Where concepts evolve in masterpieces
+            </h3>
+            <div id="lower" class="flex items-center justify-between  bg-black px-[6vw] pt-[8vw] ">
+                <div id="button" class="text-[1.5vw] flex items-center  max-w-screen-lg mt-6">
+                    <div id="left" class="flex gap-[.9vw]">
+
+                        <a href="#main" id="button1"
+                            class="  md:hidden absolute  bottom-[10vw] left-[6vw] font-semibold"><i
+                                class="ri-arrow-up-wide-line text-[8vw]"></i></a>
+                    </div>
+                    <div id="button1" class="  hidden md:block text-stone-100 font-light"><i
+                            class="ri-arrow-up-wide-line"></i>
+                    </div>
+                    <a href="#main"
+                        class=" font  hidden md:block text-stone-100 text-[1.3vw] ml-[2vw] font-semibold">Back to
+                        Top</a>
+                </div>
+                <div id="button1" class="justify-center">
+                    <div id="button2" class=" hidden md:block text-stone-100 font-poppins font-semibold ">2024 <span
+                            class="underline">Codenest</span> All rights reserved
+                    </div>
+                    <div id="button2"
+                        class="  md:hidden text-stone-800 font-poppins font-poppins absolute mb-[3vw] bottom-[10vw] right-[6vw] font-semibold text-[4vw]">
+                        2024 Codenest All rights reserved
+                    </div>
+                </div>
+                <div id="right" class="flex gap-[.9vw]">
+                    <div id="button2"
+                        class=" font hidden md:block  text-stone-100 font-poppins text-[1.3vw] font-semibold">
+                        Follow Us</div>
+                    <div id="button2" class=" hidden md:block text-stone-100 font-poppins font-light"><i
+                            class="ri-share-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        </div>
+
+</body>
+
+</html>

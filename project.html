@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- in css it is after line no 350 -->
+  <div id="cursor"
+    class=" hidden md:block   pointer-events-none fixed z-10  top-0 left-0 w-[3vw] h-[3vw] border-[.3vw] border-stone-400 rounded-[3vw]">
+  </div>
+  <div id="main1"  >
+    <div id="nav"
+      class="h-[12vh] md:my-[0vw] md:mt-[0vw] nav fixed w-full flex justify-between items-center px-6 mt-[-45vw] md:px-[3vw] z-[9999]">
+      <div id="logo">
+        <img src="./codenest.png" alt="codenest logo" class="w-12 h-8 md:w-[4.5vw] md:h-[3vw]" />
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-black text-2xl">
+        &#9776;
+      </button>
+
+      <!-- Navigation Items -->
+      <div id="elems"
+                class="hidden font md:flex justify-between items-center gap-4 md:gap-[.9vw] font-poppins font-normal text-lg md:text-[1.3vw]">
+                <a href="index.html" class="navelem cursor-pointer">Index</a>
+                <div class="relative group" 
+                   onmouseleave="setTimeout(() => this.querySelector('.dropdown-menu').classList.add('hidden'), 900)">
+                  <div class="navelem cursor-pointer">Projects</div>
+                  <div class="hidden group-hover:block absolute bg-black text-white mt-2 py-2 rounded-md min-w-[150px] dropdown-menu">
+                    <a href="./project.html" class="block px-4 py-2 hover:bg-gray-700">All Projects</a>
+                    <a href="./projectportfolio.html" class="block px-4 py-2 hover:bg-gray-700">Web Development</a>
+                  </div>
+                </div>
+                <div class="navelem cursor-pointer">Services</div>
+                <a href="./contact.html" class="navelem cursor-pointer">Contact</a>
+                
+            </div>
+
+      <!-- Connect Button -->
+      <div id="connect" class="hidden md:block">
+        <button class="CartBtn">
+          <p class="text">Let's Talk</p>
+          <span class="IconContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="white">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center z-[9999] hidden">
+      <button id="close-menu" class="absolute top-6 right-6 text-3xl">
+        &times;
+      </button>
+      <div id="text" class="flex flex-col items-center justify-center leading-none px-[10vw]">
+        <div class="elem left-[4vw] font-poppins font-semibold text-[15vw] mt-[-140vw] absolute left-[2vw]">
+          Index
+        </div>
+        <div class="elem left-[4vw] font-poppins font-semibold text-[15vw] mt-[-110vw] absolute left-[2vw]">
+          Projects
+        </div>
+        <div class="elem left-[4vw] font-poppins font-semibold text-[15vw] mt-[-80vw] absolute left-[2vw]">
+          Services
+        </div>
+        <div class="elem left-[4vw] font-poppins font-semibold text-[15vw] mt-[-50vw] absolute left-[2vw]">
+          Contact
+        </div>
+      </div>
+      <div id="line" class="border border-solid border-white w-[92vw] absolute top-[70vh] mx-[4vw]"></div>
+      <div id="line" class="w-full absolute top-[72vh] left-[4vw] font-poppins font-semibold text-[6vw]">
+        <h1>Creative Design Agency</h1>
+      </div>
+      <div id="button2" class="absolute top-[80vh] left-[4vw] text-stone-100 font-poppins font-regular">
+        2024 Codenest All rights reserved
+      </div>
+      <div id="logo">
+        <img src="./codenesticoon.png" alt="codenest logo"
+          class="w-9 h-8 md:w-[4.5vw] md:h-[3vw] absolute top-[80vh] right-[2.5vw]" />
+      </div>
+    </div>
+    <div id="page1"  class="h-screen  w-full" data-scroll-container="">
+      <div class="container pt-[0vw] z-9">
+        <div class="scroll-container mt-[7vw] " id="scrollContainer" >
+          <div id="overlay" class="absolute pointer-events-none"></div>
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://images.unsplash.com/photo-1652598113005-a75ff204263b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDM3fHx8ZW58MHx8fHx8)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://images.unsplash.com/photo-1659922119096-c25e816c9736?q=80&w=1625&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://images.unsplash.com/photo-1611175695357-081a567c5c53?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEdyYXBoaWNzJTIwcHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://images.unsplash.com/photo-1505356822725-08ad25f3ffe4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHBvcCUyMGFydHxlbnwwfHwwfHx8MA%3D%3D)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://images.unsplash.com/photo-1723118641440-485d9630c3c3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://images.unsplash.com/photo-1734779205331-4566d6965fa2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        <div id="box" class="group">
+          <div
+            class="scroll-item scroll relative cursor-pointer bg-center bg-cover bg-[url(https://plus.unsplash.com/premium_photo-1675249003484-38931863d9bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D)]">
+            <div id="date"
+              class="date absolute h-[2.3vw] w-[4.3vw] bg-stone-100 text-[0.3vw] top-[1.6vw] left-[2vw] rounded-lg text-black flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h1 class="text-[1.3vw]">2024</h1>
+            </div>
+          </div>
+          <div id="texts" class="flex items-center justify-between px-[4vw] mt-[-1.3vw] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div id="text1" class="text-black font text-black text-[1.6vw]">Carey's Special</div>
+            <div id="text2" class="text-black font text-black text-[1.2vw]">Branding</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div id="buttonss" class="flex items-center justify-between px-[5vw] mt-[5vw] ">
+        <button class="scroll-btn" onclick="scrollLeft()"><i class="ri-arrow-left-s-line"></i></button>
+        <h1 class="captalize font text-[1.3vw]">Scroll to explore</h1>
+        <button class="scroll-btn" onclick="scrollRight()"><i class="ri-arrow-right-s-line"></i></button>
+      </div>
+    </div>
+
+    <!-- js starts from line no 697 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="scriptproject.js"></script>
+</body>
+
+</html>
